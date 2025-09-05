@@ -1,42 +1,110 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset-ish */
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+
+/* Card container */
+.container {
+  width: min(760px, 92vw);
+  background: linear-gradient(180deg, rgba(16,22,34,0.9), rgba(10,14,22,0.9));
+  border: 1px solid #232b44;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  padding: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.header {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin-bottom: 12px;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.title {
+  font-size: 20px; font-weight: 700; letter-spacing: 0.2px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.badge {
+  font-size: 12px; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid #33406b; background: #0e1426; color: #cdd6ff;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.input, .search, .select, .date {
+  background: #0b1020; border: 1px solid #293659; color: #eef1f8;
+  padding: 12px 14px; border-radius: 10px; outline: none;
+}
+.input::placeholder, .search::placeholder { color: #9fb0ff88; }
+.input:focus, .search:focus, .select:focus, .date:focus { border-color: #5c7cff; }
+
+.input { flex: 1; min-width: 200px; }
+.search { flex: 1; min-width: 160px; padding: 8px 10px; }
+
+.select { padding: 10px 12px; }
+.date { padding: 10px 12px; }
+
+.btn {
+  background: #3552c8; border: 1px solid #4362d4; color: white;
+  padding: 12px 14px; border-radius: 10px; cursor: pointer; font-weight: 600;
+}
+.btn:hover { filter: brightness(1.06); }
+.btn.ghost {
+  background: transparent; border-color: #2a3b7a; color: #c7d0ff;
+}
+.btn.small { padding: 8px 10px; font-size: 12px; }
+
+.toolbar {
+  margin-top: 10px;
+  display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;
+}
+.filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter {
+  background: #0b1020; border: 1px solid #293659; color: #c7d0ff;
+  padding: 6px 10px; border-radius: 999px; font-size: 12px; cursor: pointer;
+}
+.filter.active { border-color: #5c7cff; color: #e7ebff; }
+
+.tools { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+.list { margin-top: 14px; display: grid; gap: 8px; }
+
+.item {
+  display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: center;
+  background: #0b1020; border: 1px solid #243152; border-radius: 12px; padding: 10px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.checkbox { width: 18px; height: 18px; cursor: pointer; }
+
+.text { color: #eaf0ff; line-height: 1.4; }
+.text.done { color: #9fb0ff99; text-decoration: line-through; }
+
+.meta { display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
+.pill {
+  font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid #2a3b7a; color: #c7d0ff;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.pill.high { border-color: #9a3a3a; background: #2a1111; color: #ffb3b3; }
+.pill.medium { border-color: #a0833f; background: #231a0c; color: #ffe1a3; }
+.pill.low { border-color: #2f6c3b; background: #0f1f14; color: #b6f0c4; }
+.pill.overdue { border-color: #8a3f3f; background: #241010; color: #ffc0c0; }
+
+.itemActions { display: flex; gap: 6px; }
+
+.muted { color: #9fb0ff99; font-size: 12px; }
+
+.footer { margin-top: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+/* Progress bar */
+.progressWrap {
+  width: 180px; height: 8px; background: #0b1020; border: 1px solid #293659; border-radius: 999px;
+  overflow: hidden;
+}
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #3f6cff, #61a3ff);
+  width: 0%;
+  transition: width 200ms ease;
+}
+
+/* Tiny help */
+.kbd {
+  border: 1px solid #2e3a66; background: #0e1426; padding: 2px 6px; border-radius: 6px; font-size: 11px; color: #c7d0ff;
 }

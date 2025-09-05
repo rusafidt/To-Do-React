@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js To-Do App
 
-## Getting Started
+A clean, modern **To-Do app** built with [Next.js](https://nextjs.org/) using the **App Router**.  
+Features a dark aesthetic design, priorities, due dates, search, filters, and JSON export/import.  
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- Add tasks with **text, priority, and due date**  
+- Mark tasks ✅ complete / ⏳ active  
+- Edit or Delete tasks  
+- Search (case-insensitive, real-time)  
+- Filters: All • Active • Done  
+- Sort option: Incomplete first  
+- Stats bar with completion % and progress bar  
+- Due date highlighting (overdue shown in red)  
+- Priorities: Low • Medium • High  
+- Local persistence with `localStorage`  
+- Export / Import tasks as JSON  
+- Keyboard shortcuts:  
+  - `Ctrl + N` → focus Add box  
+  - `Ctrl + K` → focus Search  
+
+---
+
+## 📸 Screenshots
+
+![To-Do App Screenshot](docs/todo-screenshot.png)
+
+---
+
+## 🚀 Getting Started
+
+Clone & run locally:
 
 ```bash
+git clone https://github.com/YOUR_USERNAME/next-todo.git
+cd next-todo
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Then open [http://localhost:3000/]{http://localhost:3000/}
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🧑‍💻 About
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project was built to practice React + Next.js fundamentals:
+- State management with hooks
+- Client components in App Router
+- Filtering, sorting, and persistence
+- Clean UI with custom CSS
