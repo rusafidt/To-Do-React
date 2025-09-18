@@ -35,7 +35,7 @@ Features a dark aesthetic design, priorities, due dates, search, filters, and JS
 Clone & run locally:
 
 ```bash
-git clone https://github.com/rusafidt/next-todo.git
+git clone https://github.com/rusafidt/To-Do-React.git
 cd next-todo
 npm install
 npm run dev
